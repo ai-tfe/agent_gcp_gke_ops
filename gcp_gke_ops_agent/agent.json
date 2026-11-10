@@ -1,0 +1,89 @@
+{
+  "name": "GCP GKE Operations Agent",
+  "description": "Google Kubernetes Engine (GKE) Operations Agent with cluster, node pool, and Kubernetes workload diagnostics, Cloud Logging & Monitoring observability, and official GCP Knowledge lookup.",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false
+  },
+  "securitySchemes": {
+    "bearer": {
+      "httpAuthSecurityScheme": {
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "securityRequirements": [
+    {
+      "schemes": {
+        "bearer": {
+          "list": []
+        }
+      }
+    }
+  ],
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "gke_cluster_workload_operations",
+      "name": "GKE Cluster, Node Pool & Workload Diagnostics",
+      "description": "Lists and inspects GKE clusters, node pools, cluster health/issues, Kubernetes resources, events, rollout status, and pod logs.",
+      "tags": [
+        "gcp",
+        "gke",
+        "kubernetes",
+        "k8s",
+        "clusters",
+        "workloads"
+      ],
+      "examples": [
+        "List all GKE clusters in the project and check cluster health and issues",
+        "Inspect node pools, Kubernetes events, and diagnose unhealthy workloads"
+      ]
+    },
+    {
+      "id": "gcp_cloud_observability",
+      "name": "GCP Cloud Logging & Monitoring Diagnostics",
+      "description": "Queries Cloud Logging entries and Cloud Monitoring time-series metrics and alerts for GKE clusters and containers.",
+      "tags": [
+        "gcp",
+        "logging",
+        "monitoring",
+        "observability",
+        "metrics",
+        "alerts"
+      ],
+      "examples": [
+        "Check recent GKE container error logs and pod CPU/memory utilization metrics"
+      ]
+    },
+    {
+      "id": "gcp_knowledge_best_practices",
+      "name": "GCP Documentation & Best Practices Lookup",
+      "description": "Searches official Google Cloud documentation and architecture guides for GKE best practices.",
+      "tags": [
+        "gcp",
+        "documentation",
+        "knowledge",
+        "best-practices"
+      ],
+      "examples": [
+        "What are the official GCP best practices for GKE Workload Identity and cluster autoscaling?"
+      ]
+    }
+  ],
+  "supportedInterfaces": [
+    {
+      "url": "https://localhost:8080",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ]
+}
